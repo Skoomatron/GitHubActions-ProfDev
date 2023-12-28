@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Message
-        run: echo "Workflow Dispatched Successfully"
+        run: |
+          echo "Workflow Dispatched Successfully"
+          echo "Moving To Next Stage"
       - name: End Message
         run: echo "Workflow closing..."
