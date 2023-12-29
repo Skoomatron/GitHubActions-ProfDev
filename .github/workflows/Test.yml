@@ -1,31 +1,17 @@
 name: Test And Deploy
 on: [push, workflow_dispatch]
 jobs:
-  unit-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Collect Code
-        uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Install Dependencies
-        run: npm ci
-      - name: Run Unit Tests
-        run: npm test
   deploy:
-    needs: unit-tests
     runs-on: ubuntu-latest
     steps:
+      - name: Output Event Data
+        run: echo "${{ toJSON(github.event) }}"
       - name: Collect Code
         uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - name: Install Dependencies
         run: npm ci
+      - name: Run Tests
+        run: npm run test
       - name: Build Project
         run: npm run build
       - name: Deploy
