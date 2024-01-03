@@ -10,8 +10,8 @@ jobs:
   test:
     env:
       MONGODB_CLUSTER_ADDRESS: gckexplore.5krsphd.mongodb.net
-      MONGODB_USERNAME: generalUser
-      MONGODB_PASSWORD: 1337Zeng!!!!
+      MONGODB_USERNAME: testUser
+      MONGODB_PASSWORD: y01Fjkj92zNjFJKe
       PORT: 3032
     environment: testing
     runs-on: ubuntu-latest
