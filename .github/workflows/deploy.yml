@@ -5,14 +5,14 @@ on:
       - main
       - dev
 env:
-  MONGODB_DB_NAME: gckexplore
+  MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
 jobs:
   test:
     env:
-      MONGODB_CLUSTER_ADDRESS: gckexplore.5krsphd.mongodb.net
-      MONGODB_USERNAME: testUser
-      MONGODB_PASSWORD: y01Fjkj92zNjFJKe
-      PORT: 3032
+      MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      PORT: ${{ secrets.PORT }}
     environment: testing
     runs-on: ubuntu-latest
     steps:
