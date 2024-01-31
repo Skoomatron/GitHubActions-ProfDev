@@ -1,0 +1,8 @@
+name: Reusable Workflow
+on: workflow_call
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Something
+        run: echo "Doing some stuff that doesn't matter"
